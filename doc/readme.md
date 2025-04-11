@@ -1,4 +1,4 @@
-Add write up here, remove everything below
+Add write up here, remove everything below, not sure if packages.mgp needs to be updated
 
 Please include these deliverables in the doc folder of your project 4.
 * (0.5) Include the extended state machine model from a future in-class group activity. (Minimally, a cell phone scan of your drawing is acceptable.)
