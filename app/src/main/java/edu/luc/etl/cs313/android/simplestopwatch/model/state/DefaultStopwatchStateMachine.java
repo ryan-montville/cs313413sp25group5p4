@@ -9,7 +9,7 @@ import edu.luc.etl.cs313.android.simplestopwatch.model.time.TimeModel;
  *
  * @author laufer
  */
-public class DefaultStopwatchStateMachine implements StopwatchStateMachine {
+public class DefaultStopwatchStateMachine implements TimerStateMachine {
 
     public DefaultStopwatchStateMachine(final TimeModel timeModel, final ClockModel clockModel) {
         this.timeModel = timeModel;
