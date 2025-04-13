@@ -10,3 +10,4 @@ Please include these deliverables in the doc folder of your project 4.
  * What are the similarities and differences between model and code?
  * Is it more effective to code or model first?
  * Now that you have code, what, if any, changes would you make to your model? 
+<img src="https://raw.githubusercontent.com/ryan-montville/cs313413sp25group5p4/refs/heads/main/doc/StateDiagram.png" title="State Diagram" alt="State Diagram" style="width: 90%/" />
