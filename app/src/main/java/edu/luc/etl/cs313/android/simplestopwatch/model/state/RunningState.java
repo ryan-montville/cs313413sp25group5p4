@@ -2,7 +2,7 @@ package edu.luc.etl.cs313.android.simplestopwatch.model.state;
 
 import edu.luc.etl.cs313.android.simplestopwatch.R;
 
-class RunningState implements StopwatchState {
+class RunningState implements TimerState {
 
     public RunningState(final StopwatchSMStateView sm) {
         this.sm = sm;

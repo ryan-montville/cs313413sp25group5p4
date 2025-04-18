@@ -12,7 +12,7 @@ import edu.luc.etl.cs313.android.simplestopwatch.model.state.DefaultTimerStateMa
  * @author laufer
  * @see http://xunitpatterns.com/Testcase%20Superclass.html
  */
-public class DefaultTimerStateMachineTest extends AbstractStopwatchStateMachineTest {
+public class DefaultTimerStateMachineTest extends AbstractTimerStateMachineTest {
 
     @Before
     public void setUp() throws Exception {

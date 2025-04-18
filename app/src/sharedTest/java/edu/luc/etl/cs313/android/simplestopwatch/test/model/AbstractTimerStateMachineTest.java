@@ -24,7 +24,7 @@ import edu.luc.etl.cs313.android.simplestopwatch.model.time.TimeModel;
  * @author laufer
  * @see http://xunitpatterns.com/Testcase%20Superclass.html
  */
-public abstract class AbstractStopwatchStateMachineTest {
+public abstract class AbstractTimerStateMachineTest {
 
     private TimerStateMachine model;
 
