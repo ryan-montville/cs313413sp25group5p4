@@ -11,15 +11,9 @@ class LapRunningState implements TimerState {
     private final StopwatchSMStateView sm;
 
     @Override
-    public void onStartStop() {
+    public void onButtonClicked() {
         sm.actionStop();
         sm.toLapStoppedState();
-    }
-
-    @Override
-    public void onLapReset() {
-        sm.toRunningState();
-        sm.actionUpdateView();
     }
 
     @Override

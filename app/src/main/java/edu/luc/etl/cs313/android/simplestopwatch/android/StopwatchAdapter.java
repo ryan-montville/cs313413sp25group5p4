@@ -85,11 +85,8 @@ public class StopwatchAdapter extends Activity implements StopwatchModelListener
     }
 
     // forward event listener methods to the model
-    public void onStartStop(final View view) {
-        model.onStartStop();
+    public void onButtonClicked(final View view) {
+        model.onButtonClicked();
     }
 
-    public void onLapReset(final View view)  {
-        model.onLapReset();
-    }
 }
