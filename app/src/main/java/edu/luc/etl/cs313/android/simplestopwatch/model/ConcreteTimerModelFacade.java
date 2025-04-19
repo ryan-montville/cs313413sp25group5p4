@@ -13,7 +13,7 @@ import edu.luc.etl.cs313.android.simplestopwatch.model.time.TimeModel;
  *
  * @author laufer
  */
-public class ConcreteStopwatchModelFacade implements StopwatchModelFacade {
+public class ConcreteTimerModelFacade implements TimerModelFacade {
 
     private final TimerStateMachine stateMachine;
 
@@ -21,7 +21,7 @@ public class ConcreteStopwatchModelFacade implements StopwatchModelFacade {
 
     private final TimeModel timeModel;
 
-    public ConcreteStopwatchModelFacade() {
+    public ConcreteTimerModelFacade() {
         timeModel = new DefaultTimeModel();
         clockModel = new DefaultClockModel();
         stateMachine = new DefaultTimerStateMachine(timeModel, clockModel);

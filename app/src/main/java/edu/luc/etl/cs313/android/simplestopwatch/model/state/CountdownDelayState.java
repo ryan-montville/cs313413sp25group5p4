@@ -4,11 +4,11 @@ import edu.luc.etl.cs313.android.simplestopwatch.R;
 
 public class CountdownDelayState implements TimerState {
 
-    public CountdownDelayState(final StopwatchSMStateView sm) {
+    public CountdownDelayState(final TimerSMStateView sm) {
         this.sm = sm;
     }
 
-    private final StopwatchSMStateView sm;
+    private final TimerSMStateView sm;
     @Override
     public void updateView() { sm.updateUIRuntime(); }
 
