@@ -37,7 +37,7 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
     @Override public synchronized void onTick() { state.onTick(); }
 
     @Override public void updateUIRuntime() { listener.onTimeUpdate(timeModel.getRuntime()); }
-    @Override public void updateUILaptime() { listener.onTimeUpdate(timeModel.getLaptime()); }
+    //@Override public void updateUILaptime() { listener.onTimeUpdate(timeModel.getLaptime()); }
 
     // known states
     private final TimerState STOPPED = new StoppedState(this);
@@ -53,6 +53,7 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
     // actions
     @Override public void actionInit()       { toStoppedState(); actionReset(); }
     @Override public void actionReset()      { timeModel.resetRuntime(); actionUpdateView(); }
+    @Override public void actionAdd()        {  }
     @Override public void actionStart()      { clockModel.start(); }
     @Override public void actionStop()       { clockModel.stop(); }
     @Override public void actionDec()        { timeModel.incRuntime(); actionUpdateView(); }
