@@ -15,10 +15,10 @@ interface TimerSMStateView {
     // actions
     void actionInit();
     void actionReset();
+    void actionAdd(); //to add seconds
     void actionStart();
-    void actionStop();
-    void actionLap();
-    void actionInc();
+    void actionStop(); //unnecessary now? just reset
+    void actionDec();
     void actionUpdateView();
 
     // state-dependent UI updates
