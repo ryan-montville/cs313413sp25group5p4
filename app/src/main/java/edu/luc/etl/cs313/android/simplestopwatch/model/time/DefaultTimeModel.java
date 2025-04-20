@@ -18,7 +18,14 @@ public class DefaultTimeModel implements TimeModel {
 
     @Override
     public void incRuntime() {
-        runningTime = (runningTime + SEC_PER_TICK) % SEC_PER_HOUR;
+        // capping off the runtime at 99 so it does not exceed
+        runningTime = Math.min(runningTime + SEC_PER_TICK, 99);
+        //this logic can be passed to the boundedcontainer from click counter.
+    }
+
+    @Override
+    public void decRuntime(){
+        runningTime = Math.max(runningTime - SEC_PER_TICK, 0);
     }
 
     @Override
@@ -34,5 +41,10 @@ public class DefaultTimeModel implements TimeModel {
     @Override
     public int getLaptime() {
         return lapTime;
+    }
+
+    @Override
+    public void setRuntime(int runtime) {
+        runningTime = runtime;
     }
 }
