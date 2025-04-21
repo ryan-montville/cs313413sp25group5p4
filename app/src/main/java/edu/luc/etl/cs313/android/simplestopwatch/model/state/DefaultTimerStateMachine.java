@@ -42,7 +42,7 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
     // known states
     private final TimerState STOPPED = new StoppedState(this);
     private final TimerState RUNNING = new RunningState(this);
-    private final TimerState COUNTDOWN_DELAY = new CountdownState(this);
+    private final TimerState COUNTDOWN_DELAY = new CountdownDelayState(this);
 
     // transitions
     @Override public void toRunningState()    { setState(RUNNING); }
