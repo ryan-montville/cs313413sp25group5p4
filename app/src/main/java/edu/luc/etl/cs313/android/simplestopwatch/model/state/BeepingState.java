@@ -17,13 +17,12 @@ public class BeepingState implements TimerState {
 
     @Override
     public void onButtonClicked() {
-        //still needs to be done
-        //should turn off the alarm/reset
+        sm.actionStop();
+        sm.toStoppedState();
     }
-
     @Override
     public void onTick() {
-        //still needs to be done
-        //starts alarm (?)
+        sm.actionStart();
+        updateView();
     }
 }
