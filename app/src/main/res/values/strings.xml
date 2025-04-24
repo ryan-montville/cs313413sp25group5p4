@@ -6,7 +6,7 @@
     <string name="title_activity_main">Loyola CS 313/413 Group 5 Timer</string>
 
     <!-- view strings -->
-    <string name="startStop">Start/Stop</string>
+    <string name="startStop">Add/Stop</string>
     <string name="minutes">00</string>
     <string name="seconds">00</string>
     <string name="colon">:</string>
