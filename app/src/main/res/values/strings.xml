@@ -15,7 +15,7 @@
     <string name="STOPPED">Stopped</string>
     <string name="RUNNING">Running</string>
     <string name="THREE_SECOND_COUNTDOWN">3 Second Countdown</string>
-    <string name="LAP_RUNNING">Lap/Running</string>
-    <string name="LAP_STOPPED">Lap/Stopped</string>
+    <string name="BEEPING">Beeping</string>
+
 
 </resources>

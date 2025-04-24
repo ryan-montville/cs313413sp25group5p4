@@ -43,19 +43,20 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
     private final TimerState STOPPED = new StoppedState(this);
     private final TimerState RUNNING = new RunningState(this);
     private final TimerState COUNTDOWN_DELAY = new CountdownDelayState(this);
+    private final TimerState BEEPING = new BeepingState(this);
 
     // transitions
     @Override public void toRunningState()    { setState(RUNNING); }
     @Override public void toStoppedState()    { setState(STOPPED); }
-
-    @Override public void toCountdownState() { setState(COUNTDOWN_DELAY); }
+    @Override public void toCountdownState() { setState(COUNTDOWN_DELAY ); }
+    @Override public void toBeepingState()    { setState(BEEPING); }
 
     // actions
     @Override public void actionInit()       { toStoppedState(); actionReset(); }
     @Override public void actionReset()      { timeModel.resetRuntime(); actionUpdateView(); }
-    @Override public void actionAdd()        {  }
+    @Override public void actionAdd()        { timeModel.incRuntime(); actionUpdateView(); }
     @Override public void actionStart()      { clockModel.start(); }
     @Override public void actionStop()       { clockModel.stop(); }
-    @Override public void actionDec()        { timeModel.incRuntime(); actionUpdateView(); }
+    @Override public void actionDec()        { timeModel.decRuntime(); actionUpdateView(); }
     @Override public void actionUpdateView() { state.updateView(); }
 }
