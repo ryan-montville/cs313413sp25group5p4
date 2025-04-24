@@ -19,13 +19,16 @@ public class CountdownDelayState implements TimerState {
 
     @Override
     public void onButtonClicked() {
-        //still needs to be done
-        //should restart the 3 second countdown
+       sm.actionResetThreeSecondCountdown();
     }
 
     @Override
     public void onTick() {
-        //still needs to be done
-        //counts down the 3 seconds
+       sm.actionDecThreeSecondCountdown();
+       if(sm.getThreeSecondCountdown() <= 0){
+        sm.toRunningState();
+        {else}
+        updateView();
+       }
     }
 }

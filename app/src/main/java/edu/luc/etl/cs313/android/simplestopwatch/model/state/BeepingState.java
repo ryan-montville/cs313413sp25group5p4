@@ -24,6 +24,5 @@ public class BeepingState implements TimerState {
     public void onTick() {
         sm.actionStart();
         updateView();
-
     }
 }
