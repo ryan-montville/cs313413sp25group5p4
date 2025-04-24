@@ -11,4 +11,5 @@ public interface TimeModel {
     void incRuntime();
     int getRuntime();
     void decRuntime();
+    boolean isTimeZero();
 }
