@@ -1,13 +1,10 @@
 Add write up here, remove everything below, not sure if packages.mgp needs to be updated
 
-Please include these deliverables in the doc folder of your project 4.
-* (0.5) Include the extended state machine model from a future in-class group activity. (Minimally, a cell phone scan of your drawing is acceptable.)
-* (0.25) Use inline comments to document design details in the code.
-* (0.25) Add javadoc comments to document how to use the abstractions (interfaces, classes) you designed. You will not have to create javadoc HTML.
+
 * Include a brief (300-500 words) report containing this information:
  * (0.5) Your Group development journey during this project. Focus on aspects you find noteworthy, e.g., process, pairing, testing, design decisions, refactoring, use of the repository.
- * (0.5) The relationship between your extended state machine model from this project and your actual code. Possible talking points are:
- * What are the similarities and differences between model and code?
- * Is it more effective to code or model first?
- * Now that you have code, what, if any, changes would you make to your model? 
+
+The extended state machine model we created before we started working on the code had four states: Stopped, Click Active, 3 Second Countdown, and Running. Once we started working on the code we realized that we needed a Beeping state and did not need a state for the click events. Besides that change, our app followed the model we created pretty closely. One small change we made was calling the countdown state CountdownDelay instead of 3SecondCountdown, for clarity and so that it didn’t start with a number. We think that it was helpful to create the model first before coding because it helped us fully understand how the app functions.
+
+
 <img src="https://raw.githubusercontent.com/ryan-montville/cs313413sp25group5p4/refs/heads/main/doc/StateDiagram.png" title="State Diagram" alt="State Diagram" style="width: 90%/" />
