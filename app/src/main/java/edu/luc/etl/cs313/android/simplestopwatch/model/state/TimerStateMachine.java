@@ -1,6 +1,6 @@
 package edu.luc.etl.cs313.android.simplestopwatch.model.state;
 
-import edu.luc.etl.cs313.android.simplestopwatch.common.StopwatchModelSource;
+import edu.luc.etl.cs313.android.simplestopwatch.common.TimerModelSource;
 import edu.luc.etl.cs313.android.simplestopwatch.common.TimerUIListener;
 import edu.luc.etl.cs313.android.simplestopwatch.model.clock.TickListener;
 

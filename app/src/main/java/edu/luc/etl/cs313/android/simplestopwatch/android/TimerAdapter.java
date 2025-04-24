@@ -10,7 +10,7 @@ import java.util.Locale;
 
 import edu.luc.etl.cs313.android.simplestopwatch.R;
 import edu.luc.etl.cs313.android.simplestopwatch.common.Constants;
-import edu.luc.etl.cs313.android.simplestopwatch.common.StopwatchModelListener;
+import edu.luc.etl.cs313.android.simplestopwatch.common.TimerModelListener;
 import edu.luc.etl.cs313.android.simplestopwatch.model.ConcreteTimerModelFacade;
 import edu.luc.etl.cs313.android.simplestopwatch.model.TimerModelFacade;
 
