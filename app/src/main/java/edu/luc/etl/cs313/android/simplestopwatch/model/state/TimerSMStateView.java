@@ -11,7 +11,7 @@ interface TimerSMStateView {
     // transitions
     void toRunningState();
     void toStoppedState();
-    void toCountdownState();
+    void toCountdownDelayState();
     void toBeepingState();
 
     // actions

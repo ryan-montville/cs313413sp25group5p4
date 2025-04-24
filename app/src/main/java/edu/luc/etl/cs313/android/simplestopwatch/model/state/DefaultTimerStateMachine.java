@@ -48,7 +48,7 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
     // transitions
     @Override public void toRunningState()    { setState(RUNNING); }
     @Override public void toStoppedState()    { setState(STOPPED); }
-    @Override public void toCountdownState() { setState(COUNTDOWN_DELAY ); }
+    @Override public void toCountdownDelayState() { setState(COUNTDOWN_DELAY ); }
     @Override public void toBeepingState()    { setState(BEEPING); }
 
     // actions

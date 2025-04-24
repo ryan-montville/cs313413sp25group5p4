@@ -13,7 +13,7 @@ class StoppedState implements TimerState {
     @Override
     public void onButtonClicked() {
         sm.actionAdd();
-        //sm.toRunningState();
+        sm.toCountdownDelayState();
     }
 
     @Override
