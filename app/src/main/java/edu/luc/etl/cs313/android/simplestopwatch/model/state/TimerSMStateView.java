@@ -19,10 +19,12 @@ interface TimerSMStateView {
     void actionReset();
     void actionAdd(); //to add seconds
     void actionStart();
-    void actionStop(); //unnecessary now? just reset
+    void actionStop();
     void actionDec();
     void actionUpdateView();
-
+    void actionResetThreeSecondCountdown(); //reset countdown for starting timer
+    void actionDecThreeSecondCountdown(); //lower countdown by 1
+    void getThreeSecondCountdown(); //access how many seconds before start
     // state-dependent UI updates
     void updateUIRuntime();
 }
