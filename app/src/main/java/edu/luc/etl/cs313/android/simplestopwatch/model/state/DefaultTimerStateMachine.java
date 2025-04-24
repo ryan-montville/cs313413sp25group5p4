@@ -57,6 +57,13 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
     @Override public void actionAdd()        { timeModel.incRuntime(); actionUpdateView(); }
     @Override public void actionStart()      { clockModel.start(); }
     @Override public void actionStop()       { clockModel.stop(); }
-    @Override public void actionDec()        { timeModel.decRuntime(); actionUpdateView(); }
+    @Override public void actionDec()        {
+        timeModel.decRuntime();
+        if (timeModel.isTimeZero()) {
+            toBeepingState();
+            clockModel.stop();
+        }
+        actionUpdateView();
+    }
     @Override public void actionUpdateView() { state.updateView(); }
 }

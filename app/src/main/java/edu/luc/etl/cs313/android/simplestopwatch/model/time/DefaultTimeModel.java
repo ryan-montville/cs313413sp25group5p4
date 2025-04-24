@@ -30,9 +30,7 @@ public class DefaultTimeModel implements TimeModel {
     }
 
     @Override
-    public boolean isTimeZero() {
-        return false;
-    }
+    public boolean isTimeZero() { return runningTime == 0; }
 
     @Override
     public int getRuntime() {
