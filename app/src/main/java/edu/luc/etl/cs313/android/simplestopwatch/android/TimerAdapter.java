@@ -19,7 +19,7 @@ import edu.luc.etl.cs313.android.simplestopwatch.model.TimerModelFacade;
  *
  * @author laufer
  */
-public class TimerAdapter extends Activity implements StopwatchModelListener {
+public class TimerAdapter extends Activity implements TimerModelListener {
 
     private static String TAG = "stopwatch-android-activity";
 
