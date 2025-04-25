@@ -20,7 +20,6 @@ class RunningState implements TimerState {
     @Override
     public void onTick() {
         sm.actionDec();
-        sm.toRunningState();
     }
 
     @Override
