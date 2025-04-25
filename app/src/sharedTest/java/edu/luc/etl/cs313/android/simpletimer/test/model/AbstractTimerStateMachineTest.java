@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import edu.luc.etl.cs313.android.simpletimer.R;
-import edu.luc.etl.cs313.android.simpletimer.common.StopwatchModelListener;
+import edu.luc.etl.cs313.android.simpletimer.common.TimerModelListener;
 import edu.luc.etl.cs313.android.simpletimer.model.clock.ClockModel;
 import edu.luc.etl.cs313.android.simpletimer.model.clock.TickListener;
 import edu.luc.etl.cs313.android.simpletimer.model.state.TimerStateMachine;
@@ -145,7 +145,7 @@ public abstract class AbstractTimerStateMachineTest {
  *
  * @author laufer
  */
-class UnifiedMockDependency implements TimeModel, ClockModel, StopwatchModelListener {
+class UnifiedMockDependency implements TimeModel, ClockModel, TimerModelListener {
 
     private int timeValue = -1, stateId = -1;
 
@@ -196,6 +196,11 @@ class UnifiedMockDependency implements TimeModel, ClockModel, StopwatchModelList
     }
 
     @Override
+    public void restedCountdownTime() {
+
+    }
+
+    @Override
     public void incRuntime() {
         runningTime++;
     }
@@ -206,12 +211,28 @@ class UnifiedMockDependency implements TimeModel, ClockModel, StopwatchModelList
     }
 
     @Override
-    public void setLaptime() {
-        lapTime = runningTime;
+    public int getCountdownTime() {
+        return 0;
     }
 
     @Override
-    public int getLaptime() {
-        return lapTime;
+    public void decRuntime() {
+
     }
+
+    @Override
+    public void decCountdownTime() {
+
+    }
+
+    @Override
+    public boolean isTimeZero() {
+        return false;
+    }
+
+    @Override
+    public boolean isCountdownZero() {
+        return false;
+    }
+
 }
