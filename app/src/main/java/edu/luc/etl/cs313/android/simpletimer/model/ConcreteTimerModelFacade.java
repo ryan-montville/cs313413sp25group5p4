@@ -1,5 +1,6 @@
 package edu.luc.etl.cs313.android.simpletimer.model;
 
+import edu.luc.etl.cs313.android.simpletimer.common.TimerModelListener;
 import edu.luc.etl.cs313.android.simpletimer.model.clock.ClockModel;
 import edu.luc.etl.cs313.android.simpletimer.model.clock.DefaultClockModel;
 import edu.luc.etl.cs313.android.simpletimer.model.state.DefaultTimerStateMachine;
@@ -33,7 +34,7 @@ public class ConcreteTimerModelFacade implements TimerModelFacade {
     }
 
     @Override
-    public void setModelListener(final StopwatchModelListener listener) {
+    public void setModelListener(final TimerModelListener listener) {
         stateMachine.setModelListener(listener);
     }
 
@@ -41,6 +42,4 @@ public class ConcreteTimerModelFacade implements TimerModelFacade {
     public void onButtonClicked() {
         stateMachine.onButtonClicked();
     }
-
-
 }

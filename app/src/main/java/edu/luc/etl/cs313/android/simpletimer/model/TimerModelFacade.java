@@ -1,6 +1,7 @@
 package edu.luc.etl.cs313.android.simpletimer.model;
 
 import edu.luc.etl.cs313.android.simpletimer.common.Startable;
+import edu.luc.etl.cs313.android.simpletimer.common.TimerModelSource;
 import edu.luc.etl.cs313.android.simpletimer.common.TimerUIListener;
 
 /**
@@ -9,4 +10,4 @@ import edu.luc.etl.cs313.android.simpletimer.common.TimerUIListener;
  *
  * @author laufer
  */
-public interface TimerModelFacade extends Startable, TimerUIListener, StopwatchModelSource { }
+public interface TimerModelFacade extends Startable, TimerUIListener, TimerModelSource { }
