@@ -16,7 +16,7 @@ public class DefaultTimeModel implements TimeModel {
     }
 
     @Override
-    public void restedCountdownTime() {countDownTime = 0; }
+    public void restedCountdownTime() {countDownTime = 3; }
 
     @Override
     public void incRuntime() {
