@@ -24,7 +24,7 @@ interface TimerSMStateView {
     void actionUpdateView();
     void actionResetThreeSecondCountdown(); //reset countdown for starting timer
     void actionDecThreeSecondCountdown(); //lower countdown by 1
-    void getThreeSecondCountdown(); //access how many seconds before start
+    int getThreeSecondCountdown(); //access how many seconds before start
     // state-dependent UI updates
     void updateUIRuntime();
 }
