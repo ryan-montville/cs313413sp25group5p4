@@ -1,10 +1,7 @@
-Add write up here, remove everything below, not sure if packages.mgp needs to be updated
+When we were first deciding how to split up the work amongst the group, we tried to evenly assign the files to every group member. We soon realized that was not an even distribution since many of the files are simply interfaces which required little to no changes to be made to them. We then made a list of the tasks that needed to be done and started choosing which tasks we wanted to work on. 
 
-
-* Include a brief (300-500 words) report containing this information:
- * (0.5) Your Group development journey during this project. Focus on aspects you find noteworthy, e.g., process, pairing, testing, design decisions, refactoring, use of the repository.
+Due to everyone having different schedules, we found it best to just work on our tasks by ourselves, pushing our code to the repo often and asking for help from others when we got stuck. One difficulty we ran into using the repository was when the tasks that we were working on were in the same file, how do we both work on our tasks without creating any merge conflicts. We each had multiple tasks to complete, so we were able to work on other tasks until the group member that was working on the file we needed to work on finished their task. It took a lot of communication between teammates, but we were able to successfully complete our tasks without too many issues. It helped
 
 The extended state machine model we created before we started working on the code had four states: Stopped, Click Active, 3 Second Countdown, and Running. Once we started working on the code we realized that we needed a Beeping state and did not need a state for the click events. Besides that change, our app followed the model we created pretty closely. One small change we made was calling the countdown state CountdownDelay instead of 3SecondCountdown, for clarity and so that it didn’t start with a number. We think that it was helpful to create the model first before coding because it helped us fully understand how the app functions.
-
 
 <img src="https://raw.githubusercontent.com/ryan-montville/cs313413sp25group5p4/refs/heads/main/doc/StateDiagram.png" title="State Diagram" alt="State Diagram" style="width: 90%/" />
