@@ -66,4 +66,19 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
         actionUpdateView();
     }
     @Override public void actionUpdateView() { state.updateView(); }
+
+    @Override
+    public void actionResetThreeSecondCountdown() {
+        timeModel.restedCountdownTime();;
+    }
+
+    @Override
+    public void actionDecThreeSecondCountdown() {
+        timeModel.decCountdownTime();;
+        if (timeModel.isCountdownZero()) {
+            toRunningState();;
+            clockModel.start();
+        }
+        actionUpdateView();;
+    }
 }
