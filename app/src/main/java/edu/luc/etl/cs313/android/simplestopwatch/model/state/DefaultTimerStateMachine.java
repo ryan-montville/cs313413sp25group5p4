@@ -24,10 +24,10 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
         listener.onStateUpdate(state.getId()); //notifies UI of the state change
     }
 
-    private StopwatchModelListener listener;
+    private TimerModelListener listener;
 
     @Override
-    public void setModelListener(final StopwatchModelListener listener) {
+    public void setModelListener(final TimerModelListener listener) {
         this.listener = listener;
     }
 
