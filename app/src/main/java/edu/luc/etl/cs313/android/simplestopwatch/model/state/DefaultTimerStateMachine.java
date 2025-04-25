@@ -21,7 +21,7 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
 
     protected void setState(final TimerState state) {
         this.state = state;
-        listener.onStateUpdate(state.getId());
+        listener.onStateUpdate(state.getId()); //notifies UI of the state change
     }
 
     private StopwatchModelListener listener;
@@ -34,12 +34,13 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
     //@Override public synchronized void onStartStop() { state.onStartStop(); } //old button
     public synchronized void onButtonClicked() { state.onButtonClicked(); }
 
-    @Override public synchronized void onTick() { state.onTick(); }
+    @Override public synchronized void onTick() { state.onTick(); } //assigning tick to current state
 
     @Override public void updateUIRuntime() { listener.onTimeUpdate(timeModel.getRuntime()); }
     //@Override public void updateUILaptime() { listener.onTimeUpdate(timeModel.getLaptime()); }
 
-    // known states
+    // known states    
+    //Defines all the known states used in the timer's finite state machine
     private final TimerState STOPPED = new StoppedState(this);
     private final TimerState RUNNING = new RunningState(this);
     private final TimerState COUNTDOWN_DELAY = new CountdownDelayState(this);
@@ -54,7 +55,7 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
     // actions
     @Override public void actionInit()       { toStoppedState(); actionReset(); }
     @Override public void actionReset()      { timeModel.resetRuntime(); actionUpdateView(); }
-    @Override public void actionAdd()        { timeModel.incRuntime(); actionUpdateView(); }
+    @Override public void actionAdd()        { timeModel.incRuntime(); actionUpdateView(); } 
     @Override public void actionStart()      { clockModel.start(); }
     @Override public void actionStop()       { clockModel.stop(); }
     @Override public void actionDec()        {
@@ -76,7 +77,7 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
     public void actionDecThreeSecondCountdown() {
         timeModel.decCountdownTime();;
         if (timeModel.isCountdownZero()) {
-            toRunningState();;
+            toRunningState();; 
             clockModel.start();
         }
         actionUpdateView();;
