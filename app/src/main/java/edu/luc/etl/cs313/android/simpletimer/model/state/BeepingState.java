@@ -24,6 +24,7 @@ public class BeepingState implements TimerState {
     }
     @Override
     public void onTick() {
+        System.out.println("Beeping state onTick");
         sm.actionBeep();
         sm.toBeepingState();
     }

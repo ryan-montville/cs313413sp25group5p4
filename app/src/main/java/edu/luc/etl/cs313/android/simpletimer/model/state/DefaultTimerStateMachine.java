@@ -72,7 +72,6 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
         timeModel.decRuntime();
         if (timeModel.isTimeZero()) {
             toBeepingState();
-            clockModel.stop();
         }
         actionUpdateView();
     }
