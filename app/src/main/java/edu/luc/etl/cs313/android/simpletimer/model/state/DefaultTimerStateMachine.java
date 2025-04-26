@@ -65,7 +65,13 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
     // actions
     @Override public void actionInit()       { toStoppedState(); actionReset(); }
     @Override public void actionReset()      { timeModel.resetRuntime(); actionUpdateView(); }
-    @Override public void actionAdd()        { timeModel.incRuntime(); actionUpdateView(); } 
+    @Override public void actionAdd()        {
+        timeModel.incRuntime();
+        if(timeModel.getRuntime() >= 99){
+            toRunningState();
+        }
+        actionUpdateView();
+    }
     @Override public void actionStart()      { clockModel.start(); }
     @Override public void actionStop()       { clockModel.stop(); }
     @Override public void actionDec()        {
@@ -102,10 +108,10 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
     public void actionDecThreeSecondCountdown() {
         timeModel.decCountdownTime();
         if (timeModel.isCountdownZero()) {
-            clockModel.stop();
+            //clockModel.stop();
             actionBeep();
             toRunningState();
-            clockModel.start();
+            //clockModel.start();
         }
         actionUpdateView();
     }
