@@ -53,7 +53,7 @@ public class TimerAdapter extends Activity implements TimerModelListener {
     @Override
     protected void onStart() {
         super.onStart();
-        model.start();
+        model.start(); // model will start when the activity is visible
     }
 
     @Override
@@ -90,7 +90,7 @@ public class TimerAdapter extends Activity implements TimerModelListener {
         runOnUiThread(() -> {
             final TextView tvS = findViewById(R.id.seconds);
             final var locale = Locale.getDefault();
-            tvS.setText(String.format(locale,"%02d", time));
+            tvS.setText(String.format(locale,"%02d", time)); // show time is 2-digit format
         });
     }
 
@@ -100,12 +100,13 @@ public class TimerAdapter extends Activity implements TimerModelListener {
      */
     public void onStateUpdate(final int stateId) {
         // UI adapter responsibility to schedule incoming events on UI thread
-        runOnUiThread(() -> {
+        runOnUiThread(() -> { //updates UI from model thread safely
             final TextView stateName = findViewById(R.id.stateName);
-            stateName.setText(getString(stateId));
+            stateName.setText(getString(stateId)); //state label set
         });
     }
 
+    // called when the user taps the butto
     // forward event listener methods to the model
     public void onButtonClicked(final View view) {
         model.onButtonClicked();
