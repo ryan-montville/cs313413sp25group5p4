@@ -23,6 +23,11 @@ public class BeepingState implements TimerState {
     @Override
     public void updateView() { sm.updateUIRuntime(); }
 
+    /**
+     * accessor that returns the resource ID of the string associated with the Beeping state.
+     *
+     * @return The resource ID for the string "BEEPING".
+     **/
     @Override
     public int getId() {
         return R.string.BEEPING;
