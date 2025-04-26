@@ -26,4 +26,5 @@ interface TimerSMStateView {
     void actionDecThreeSecondCountdown(); //lower countdown by 1
     // state-dependent UI updates
     void updateUIRuntime();
+    Context getContext();
 }
