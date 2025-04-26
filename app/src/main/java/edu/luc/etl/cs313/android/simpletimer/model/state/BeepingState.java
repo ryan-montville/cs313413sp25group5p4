@@ -22,7 +22,7 @@ public class BeepingState implements TimerState {
     }
     @Override
     public void onTick() {
-        sm.actionStart();
+        //sm.actionStart();
         updateView();
     }
 }

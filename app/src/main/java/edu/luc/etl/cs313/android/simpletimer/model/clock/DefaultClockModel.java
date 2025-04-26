@@ -24,7 +24,6 @@ public class DefaultClockModel implements ClockModel {
     @Override
     public void start() {
         timer = new Timer();
-
         // The clock model runs onTick every 1000 milliseconds
         timer.schedule(new TimerTask() {
             @Override public void run() {

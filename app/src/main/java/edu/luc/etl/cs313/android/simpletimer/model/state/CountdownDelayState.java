@@ -27,6 +27,6 @@ public class CountdownDelayState implements TimerState {
     @Override
     public void onTick() {
        sm.actionDecThreeSecondCountdown();
-       sm.toCountdownDelayState();
+       //sm.toCountdownDelayState();
     }
 }

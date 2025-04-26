@@ -77,6 +77,7 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
     public void actionDecThreeSecondCountdown() {
         timeModel.decCountdownTime();
         if (timeModel.isCountdownZero()) {
+            clockModel.stop();
             toRunningState();
             clockModel.start();
         }
