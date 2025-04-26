@@ -16,7 +16,10 @@ public class BeepingState implements TimerState {
         this.sm = sm;
     }
     private final TimerSMStateView sm;
-
+    /**
+     * Updates the user interface to reflect runtime.
+     * This method is called periodically, to ensure the UI remains consistent.
+     **/
     @Override
     public void updateView() { sm.updateUIRuntime(); }
 
