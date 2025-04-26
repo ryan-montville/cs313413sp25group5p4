@@ -20,6 +20,7 @@ class RunningState implements TimerState {
 
     @Override
     public void onTick() {
+        //every tick (1 second), decrement the timer
         sm.actionDec();
     }
 
@@ -30,6 +31,7 @@ class RunningState implements TimerState {
 
     @Override
     public int getId() {
+        //return the ID representing the Running state (for the UI display)
         return R.string.RUNNING;
     }
 }

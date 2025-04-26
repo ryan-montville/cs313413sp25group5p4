@@ -40,10 +40,13 @@ public class ConcreteTimerModelFacade implements TimerModelFacade {
     @Override
     public void setModelListener(final TimerModelListener listener) {
         stateMachine.setModelListener(listener);
+        //forward the UI listener to the state machine
+
     }
 
     @Override
     public void onButtonClicked() {
+        // forward button clicks from UI to state machine
         stateMachine.onButtonClicked();
     }
 }

@@ -2,10 +2,6 @@ package edu.luc.etl.cs313.android.simpletimer.model.state;
 
 import edu.luc.etl.cs313.android.simpletimer.R;
 
-        /** The BeepingState class represents the state of the timer when it is emitting a beep sound.
-        * This state is entered when the timer reaches zero.
-        * It implements the {@link TimerState} interface, defining the behavior of the timer in this specific state.
-        */
 public class BeepingState implements TimerState {
     /**
      * Constructor for BeepingState instance.
@@ -16,10 +12,7 @@ public class BeepingState implements TimerState {
         this.sm = sm;
     }
     private final TimerSMStateView sm;
-    /**
-     * Updates the user interface to reflect runtime.
-     * This method is called periodically, to ensure the UI remains consistent.
-     **/
+
     @Override
     public void updateView() { sm.updateUIRuntime(); }
 
@@ -30,6 +23,7 @@ public class BeepingState implements TimerState {
      **/
     @Override
     public int getId() {
+        //return the ID representing the Beeping State for the UI display
         return R.string.BEEPING;
     }
 
@@ -40,6 +34,9 @@ public class BeepingState implements TimerState {
     **/
     @Override
     public void onButtonClicked() {
+        /* if button is pressed whiel beeping 
+         * stop teh alaram and go to stopped state
+        */
         sm.actionStop();
         sm.toStoppedState();
     }
@@ -50,6 +47,7 @@ public class BeepingState implements TimerState {
     **/
     @Override
     public void onTick() {
+        //keep beeping oeach tick and stay in the Beeping state
         System.out.println("Beeping state onTick");
         sm.actionBeep();
         sm.toBeepingState();

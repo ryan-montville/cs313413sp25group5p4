@@ -2,6 +2,8 @@ package edu.luc.etl.cs313.android.simpletimer.model.state;
 
 import edu.luc.etl.cs313.android.simpletimer.R;
 
+/* This state during the 3 second countdown before the timer */
+
 /**
  * The CountdownDelayState class represents the initial delay period
  * before the timer starts running. This state is entered when the user
@@ -26,7 +28,7 @@ public class CountdownDelayState implements TimerState {
     @Override
     public int getId() {
         return R.string.THREE_SECOND_COUNTDOWN;
-    }
+    } //Return the ID representing  the 3 second countdown stat for the UI display
 
     @Override
     public void onButtonClicked() {
@@ -37,5 +39,8 @@ public class CountdownDelayState implements TimerState {
     }
 
     @Override
-    public void onTick() {  sm.actionDecThreeSecondCountdown(); }
+    public void onTick() {  
+        //each tick during countdown -> decrement the 3 second countdown timer
+        sm.actionDecThreeSecondCountdown(); 
+    }
 }
