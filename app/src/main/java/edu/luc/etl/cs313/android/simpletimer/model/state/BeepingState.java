@@ -33,6 +33,11 @@ public class BeepingState implements TimerState {
         return R.string.BEEPING;
     }
 
+
+    /**
+    * Handles button clicks while the timer is in the beeping state.
+    * Clicking the button triggers the 'stop' action and transitions the timer to the StoppedState.
+    **/
     @Override
     public void onButtonClicked() {
         sm.actionStop();
