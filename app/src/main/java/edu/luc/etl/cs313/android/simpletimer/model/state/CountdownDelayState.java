@@ -10,7 +10,11 @@ import edu.luc.etl.cs313.android.simpletimer.R;
  * of the timer during this phase.
  */
 public class CountdownDelayState implements TimerState {
-
+    /**
+     * Constructor for CountdownDelayState instance.
+     *
+     * @param sm The state machine view associated with this state.
+     */
     public CountdownDelayState(final TimerSMStateView sm) {
         this.sm = sm;
     }
