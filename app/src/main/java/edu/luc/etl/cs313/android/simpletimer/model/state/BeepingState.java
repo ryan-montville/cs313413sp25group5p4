@@ -11,10 +11,11 @@ public class BeepingState implements TimerState {
 }
     private final TimerSMStateView sm;
     
-    private void playBeep(){
+    private void playBeep() {
         Context context = sm.getActivity();
         MediaPlayer mediapalyer = MediaPlayer.create(context, R.raw.beep);
         mediaPlayer.start();
+    }
         @Override
     public void updateView() { sm.updateUIRuntime(); }
 
