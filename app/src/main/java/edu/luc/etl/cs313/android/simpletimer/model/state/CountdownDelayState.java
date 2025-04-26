@@ -19,8 +19,10 @@ public class CountdownDelayState implements TimerState {
 
     @Override
     public void onButtonClicked() {
-        sm.actionAdd();
+        sm.actionStop();
         sm.actionResetThreeSecondCountdown();
+        sm.actionStart();
+        sm.actionAdd();
         sm.toCountdownDelayState();
     }
 
