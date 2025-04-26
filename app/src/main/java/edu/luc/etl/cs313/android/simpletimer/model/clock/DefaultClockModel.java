@@ -8,6 +8,7 @@ import java.util.TimerTask;
  *
  * @author laufer
  */
+//this periodically generates ticks every second
 public class DefaultClockModel implements ClockModel {
 
     // TODO make accurate by keeping track of partial seconds when canceled etc.
@@ -15,7 +16,7 @@ public class DefaultClockModel implements ClockModel {
     private Timer timer;
 
     private TickListener listener;
-
+    
     @Override
     public void setTickListener(final TickListener listener) {
         this.listener = listener;
@@ -35,6 +36,6 @@ public class DefaultClockModel implements ClockModel {
 
     @Override
     public void stop() {
-        timer.cancel();
+        timer.cancel(); //stops timer and cancels scheduled tasks
     }
 }
