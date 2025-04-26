@@ -13,6 +13,7 @@ class RunningState implements TimerState {
     @Override
     public void onButtonClicked() {
         sm.actionStop();
+        sm.actionReset();
         sm.toStoppedState();
     }
 
