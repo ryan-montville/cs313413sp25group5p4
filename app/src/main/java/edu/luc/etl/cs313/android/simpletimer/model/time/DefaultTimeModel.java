@@ -37,7 +37,7 @@ public class DefaultTimeModel implements TimeModel {
     public void decCountdownTime() {
         System.out.println(countDownTime);
         if (countDownTime > 0) {
-            countDownTime = Math.max(runningTime - SEC_PER_TICK, 0);
+            countDownTime = Math.max(countDownTime - SEC_PER_TICK, 0);
         }
     }
 
