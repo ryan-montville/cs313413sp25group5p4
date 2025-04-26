@@ -43,6 +43,11 @@ public class BeepingState implements TimerState {
         sm.actionStop();
         sm.toStoppedState();
     }
+    /**
+    * Handles timer tick while the timer is in the beeping state.
+    * On each tick this method triggers the 'beep' action
+    * and ensures the state remains in the BeepingState to continue the sound.
+    **/
     @Override
     public void onTick() {
         System.out.println("Beeping state onTick");
