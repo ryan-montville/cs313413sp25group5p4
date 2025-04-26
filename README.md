@@ -3,6 +3,8 @@
 The goal of this project is to convert a simple Java timer to an
 Android application. Based off of LoyolaChicagoCode's [stopwatch-android-java ](https://github.com/LoyolaChicagoCode/stopwatch-android-java).
 
+please see the [doc](https://github.com/ryan-montville/cs313413sp25group5p4/tree/main/doc) folder for our write up and extended state machine model.
+
 ## Group Members
 * Ryan Montville
 * Aakash Dawani
