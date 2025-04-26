@@ -2,10 +2,7 @@ package edu.luc.etl.cs313.android.simpletimer.model.state;
 
 import android.content.Context;
 import android.media.MediaPlayer;
-import android.media.AudioManager;
 import android.media.RingtoneManager;
-import android.media.AudioAttributes;
-import android.media.AudioManager;
 import android.net.Uri;
 
 import edu.luc.etl.cs313.android.simpletimer.common.TimerModelListener;
@@ -68,6 +65,7 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
     @Override public void actionAdd()        {
         timeModel.incRuntime();
         if(timeModel.getRuntime() >= 99){
+            actionBeep();
             toRunningState();
         }
         actionUpdateView();
