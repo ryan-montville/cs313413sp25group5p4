@@ -21,10 +21,10 @@ interface TimerSMStateView {
     void actionStart();
     void actionStop();
     void actionDec();
+    void actionBeep();
     void actionUpdateView();
     void actionResetThreeSecondCountdown(); //reset countdown for starting timer
     void actionDecThreeSecondCountdown(); //lower countdown by 1
     // state-dependent UI updates
     void updateUIRuntime();
-    Context getContext();
 }

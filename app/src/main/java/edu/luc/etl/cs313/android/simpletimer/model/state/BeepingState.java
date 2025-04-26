@@ -4,19 +4,12 @@ import edu.luc.etl.cs313.android.simpletimer.R;
 
 public class BeepingState implements TimerState {
 
-    public BeepingState(final TimerSMStateView sm) { 
+    public BeepingState(final TimerSMStateView sm) {
         this.sm = sm;
-        playBeep();
-        
-}
-    private final TimerSMStateView sm;
-    
-    private void playBeep() {
-        Context context = sm.getActivity();
-        MediaPlayer mediapalyer = MediaPlayer.create(context, R.raw.beep);
-        mediaPlayer.start();
     }
-        @Override
+    private final TimerSMStateView sm;
+
+    @Override
     public void updateView() { sm.updateUIRuntime(); }
 
     @Override
@@ -31,6 +24,7 @@ public class BeepingState implements TimerState {
     }
     @Override
     public void onTick() {
-        updateView();
+        sm.actionBeep();
+        sm.toBeepingState();
     }
 }

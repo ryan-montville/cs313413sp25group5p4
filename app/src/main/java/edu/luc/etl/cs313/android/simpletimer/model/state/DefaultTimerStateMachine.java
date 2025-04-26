@@ -1,5 +1,9 @@
 package edu.luc.etl.cs313.android.simpletimer.model.state;
 
+import android.content.Context;
+import android.media.MediaPlayer;
+import android.media.AudioManager;
+
 import edu.luc.etl.cs313.android.simpletimer.common.TimerModelListener;
 import edu.luc.etl.cs313.android.simpletimer.model.clock.ClockModel;
 import edu.luc.etl.cs313.android.simpletimer.model.time.TimeModel;
@@ -66,6 +70,13 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
         }
         actionUpdateView();
     }
+    @Override
+    public void actionBeep() {
+        Context context = getActivity();
+        MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.beep);
+        mediaPlayer.start();
+    }
+
     @Override public void actionUpdateView() { state.updateView(); }
 
     @Override
@@ -78,6 +89,7 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
         timeModel.decCountdownTime();
         if (timeModel.isCountdownZero()) {
             clockModel.stop();
+            actionBeep();
             toRunningState();
             clockModel.start();
         }
