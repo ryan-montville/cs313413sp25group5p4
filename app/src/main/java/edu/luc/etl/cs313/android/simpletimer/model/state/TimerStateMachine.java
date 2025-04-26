@@ -9,3 +9,12 @@ import edu.luc.etl.cs313.android.simpletimer.model.clock.TickListener;
  * This interface is part of the State pattern.
  */
 public interface TimerStateMachine extends TimerUIListener, TickListener, TimerModelSource, TimerSMStateView { }
+
+private final Context context;
+public TimerStateMachineImpl(Context context){
+  this.context = context;
+}
+@Override
+  public Context getContext(){
+  return Context;
+}
