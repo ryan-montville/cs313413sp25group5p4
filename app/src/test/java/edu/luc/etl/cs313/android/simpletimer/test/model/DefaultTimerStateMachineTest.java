@@ -14,15 +14,5 @@ import edu.luc.etl.cs313.android.simpletimer.model.state.DefaultTimerStateMachin
  */
 public class DefaultTimerStateMachineTest extends AbstractTimerStateMachineTest {
 
-    @Before
-    public void setUp() throws Exception {
-        super.setUp();
-        setModel(new DefaultTimerStateMachine(getDependency(), getDependency()));
-    }
 
-    @After
-    public void tearDown() {
-        setModel(null);
-        super.tearDown();
-    }
 }

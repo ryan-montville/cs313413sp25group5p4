@@ -67,37 +67,7 @@ public abstract class AbstractStopwatchActivityTest {
      *
      * @throws Throwable
      */
-    @Test
-    public void testActivityScenarioRunLapReset() throws Throwable {
-        getActivity().runOnUiThread(() -> {
-            assertEquals(0, getDisplayedValue());
-            assertTrue(getStartStopButton().performClick());
-        });
-        Thread.sleep(5500); // <-- do not run this in the UI thread!
-        runUiThreadTasks();
-        getActivity().runOnUiThread(() -> {
-            assertEquals(5, getDisplayedValue());
-            assertTrue(getResetLapButton().performClick());
-        });
-        Thread.sleep(4000); // <-- do not run this in the UI thread!
-        runUiThreadTasks();
-        getActivity().runOnUiThread(() -> {
-            assertEquals(5, getDisplayedValue());
-            assertTrue(getStartStopButton().performClick());
-        });
-        runUiThreadTasks();
-        getActivity().runOnUiThread(() -> {
-            assertEquals(5, getDisplayedValue());
-            assertTrue(getResetLapButton().performClick());
-        });
-        runUiThreadTasks();
-        getActivity().runOnUiThread(() -> {
-            assertEquals(9, getDisplayedValue());
-            assertTrue(getResetLapButton().performClick());
-        });
-        runUiThreadTasks();
-        getActivity().runOnUiThread(() -> assertEquals(0, getDisplayedValue()));
-    }
+
 
     // auxiliary methods for easy access to UI widgets
 

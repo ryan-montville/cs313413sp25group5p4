@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 
+
 import java.util.Locale;
 
 import edu.luc.etl.cs313.android.simpletimer.R;
@@ -38,7 +39,7 @@ public class TimerAdapter extends Activity implements TimerModelListener {
         // inject dependency on view so this adapter receives UI events
         setContentView(R.layout.activity_main);
         // inject dependency on model into this so model receives UI events
-        this.setModel(new ConcreteTimerModelFacade());
+        this.setModel(new ConcreteTimerModelFacade(this));
         // inject dependency on this into model to register for UI updates
         model.setModelListener(this);
     }

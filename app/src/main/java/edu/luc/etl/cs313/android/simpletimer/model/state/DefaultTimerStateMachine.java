@@ -3,6 +3,10 @@ package edu.luc.etl.cs313.android.simpletimer.model.state;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.media.AudioManager;
+import android.media.RingtoneManager;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.net.Uri;
 
 import edu.luc.etl.cs313.android.simpletimer.common.TimerModelListener;
 import edu.luc.etl.cs313.android.simpletimer.model.clock.ClockModel;
@@ -17,10 +21,12 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
     private final TimeModel timeModel;
     private final ClockModel clockModel;
     private TimerState state;
+    private final Context context;
 
-    public DefaultTimerStateMachine(final TimeModel timeModel, final ClockModel clockModel) {
+    public DefaultTimerStateMachine(final TimeModel timeModel, final ClockModel clockModel, final Context context) {
         this.timeModel = timeModel;
         this.clockModel = clockModel;
+        this.context = context;
     }
 
     protected void setState(final TimerState state) {
@@ -72,9 +78,18 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
     }
     @Override
     public void actionBeep() {
-        Context context = getActivity();
-        MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.beep);
-        mediaPlayer.start();
+        if (context != null) {
+            final Uri defaultRingtoneUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+            MediaPlayer mediaPlayer = MediaPlayer.create(context, defaultRingtoneUri);
+            if (mediaPlayer != null) {
+                mediaPlayer.start();
+                mediaPlayer.setOnCompletionListener(mp -> mp.release()); // Release resources
+            } else {
+                System.out.println("TimerStateMachine: Could not create MediaPlayer for beep sound.");
+            }
+        } else {
+            System.out.println("TimerStateMachine: Context is null, cannot play beep sound.");
+        }
     }
 
     @Override public void actionUpdateView() { state.updateView(); }

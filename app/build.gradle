@@ -21,13 +21,14 @@ jacocoAndroidUnitTestReport {
 }
 
 android {
+    namespace 'edu.luc.etl.cs313.android.simpletimer'
     compileSdkVersion 31
     buildToolsVersion "31.0.0"
 
     defaultConfig {
-        applicationId "edu.luc.etl.cs313.android.stopwatch"
+        applicationId "edu.luc.etl.cs313.android.simpletimer"
         minSdkVersion 23
-        targetSdkVersion 31
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'

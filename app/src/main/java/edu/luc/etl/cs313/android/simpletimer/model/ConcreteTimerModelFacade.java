@@ -1,5 +1,6 @@
 package edu.luc.etl.cs313.android.simpletimer.model;
 
+import android.content.Context;
 import edu.luc.etl.cs313.android.simpletimer.common.TimerModelListener;
 import edu.luc.etl.cs313.android.simpletimer.model.clock.ClockModel;
 import edu.luc.etl.cs313.android.simpletimer.model.clock.DefaultClockModel;
@@ -20,11 +21,14 @@ public class ConcreteTimerModelFacade implements TimerModelFacade {
     private final ClockModel clockModel;
 
     private final TimeModel timeModel;
+    private final Context context;
 
-    public ConcreteTimerModelFacade() {
+
+    public ConcreteTimerModelFacade(final Context context) {
         timeModel = new DefaultTimeModel();
         clockModel = new DefaultClockModel();
-        stateMachine = new DefaultTimerStateMachine(timeModel, clockModel);
+        this.context = context;
+        stateMachine = new DefaultTimerStateMachine(timeModel, clockModel, context);
         clockModel.setTickListener(stateMachine);
     }
 
