@@ -2,7 +2,7 @@ package edu.luc.etl.cs313.android.simpletimer.model.state;
 
 import edu.luc.etl.cs313.android.simpletimer.R;
 
-/* This file deals with the state when the timer is stopepd at zero
+/* This file deals with the state when the timer is stopped at zero
  * allows incrementing time before starting countdown 
 */
 

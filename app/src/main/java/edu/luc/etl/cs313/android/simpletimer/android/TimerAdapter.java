@@ -15,14 +15,11 @@ import edu.luc.etl.cs313.android.simpletimer.common.TimerModelListener;
 import edu.luc.etl.cs313.android.simpletimer.model.ConcreteTimerModelFacade;
 import edu.luc.etl.cs313.android.simpletimer.model.TimerModelFacade;
 
-/**
- * A thin adapter component for the stopwatch.
- *
- * @author laufer
- */
+// A thin adapter component for the timer.
+
 public class TimerAdapter extends Activity implements TimerModelListener {
 
-    private static String TAG = "stopwatch-android-activity";
+    private static String TAG = "timer-android-activity";
 
     /**
      * The state-based dynamic model.
@@ -67,13 +64,6 @@ public class TimerAdapter extends Activity implements TimerModelListener {
         super.onPause();
         // Pause any ongoing operations or timers if needed
     }
-
-   /* @Override
-    protected void onStop() {
-        super.onStop();
-        // Stop the timer to conserve resources
-        model.stop();
-    } */
 
     @Override
     protected void onDestroy() {

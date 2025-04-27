@@ -1,7 +1,7 @@
 package edu.luc.etl.cs313.android.simpletimer.common;
 
 /**
- * Constants for the time calculations used by the stopwatch.
+ * Constants for the time calculations used by the timer.
  */
 public enum Constants {
 

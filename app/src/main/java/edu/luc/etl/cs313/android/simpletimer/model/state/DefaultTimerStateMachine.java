@@ -9,11 +9,7 @@ import edu.luc.etl.cs313.android.simpletimer.common.TimerModelListener;
 import edu.luc.etl.cs313.android.simpletimer.model.clock.ClockModel;
 import edu.luc.etl.cs313.android.simpletimer.model.time.TimeModel;
 
-/**
- * An implementation of the state machine for the stopwatch.
- *
- * @author laufer
- */
+// An implementation of the state machine for the timer.
 public class DefaultTimerStateMachine implements TimerStateMachine {
     private final TimeModel timeModel;
     private final ClockModel clockModel;
@@ -38,13 +34,11 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
         this.listener = listener;
     }
 
-    //@Override public synchronized void onStartStop() { state.onStartStop(); } //old button
     public synchronized void onButtonClicked() { state.onButtonClicked(); }
 
     @Override public synchronized void onTick() { state.onTick(); } //assigning tick to current state
 
     @Override public void updateUIRuntime() { listener.onTimeUpdate(timeModel.getRuntime()); }
-    //@Override public void updateUILaptime() { listener.onTimeUpdate(timeModel.getLaptime()); }
 
     // known states    
     //Defines all the known states used in the timer's finite state machine

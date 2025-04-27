@@ -3,7 +3,7 @@ package edu.luc.etl.cs313.android.simpletimer.model.time;
 import static edu.luc.etl.cs313.android.simpletimer.common.Constants.*;
 
 /**
- * An implementation of the stopwatch data model.
+ * An implementation of the timer data model.
  */
 public class DefaultTimeModel implements TimeModel {
 
@@ -55,11 +55,4 @@ public class DefaultTimeModel implements TimeModel {
     public int getCountdownTime() {
         return countDownTime;
     }
-/*
-    @Override
-    public void setRuntime(int runtime) {
-        runningTime = runtime;
-    }
-
- */
 }
