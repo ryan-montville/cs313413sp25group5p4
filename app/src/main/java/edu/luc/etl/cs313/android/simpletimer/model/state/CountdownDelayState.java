@@ -32,10 +32,12 @@ public class CountdownDelayState implements TimerState {
 
     @Override
     public void onButtonClicked() {
+        // add a second to the timer and reset countdown for 3 second delay
         sm.actionStop();
         sm.actionResetThreeSecondCountdown();
         sm.actionAdd();
         sm.actionStart();
+        // stop and restart clock ticking so that if seconds hit 99, a full second will still pass before time decreases
     }
 
     @Override

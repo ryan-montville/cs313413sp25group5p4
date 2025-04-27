@@ -16,9 +16,9 @@ class StoppedState implements TimerState {
 
     @Override
     public void onButtonClicked() {
-        // the start of a 3 second countdown delay and add 1 second to timer
+        // start clock ticking, add 1 second to timer, and move to 3 second delay
         sm.actionStart();
-        sm.actionResetThreeSecondCountdown();
+        sm.actionResetThreeSecondCountdown(); // reset countdown for second run
         sm.actionAdd();
         sm.toCountdownDelayState();
     }

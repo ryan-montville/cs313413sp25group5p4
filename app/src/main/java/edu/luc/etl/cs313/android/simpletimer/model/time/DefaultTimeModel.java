@@ -8,7 +8,7 @@ import static edu.luc.etl.cs313.android.simpletimer.common.Constants.*;
 public class DefaultTimeModel implements TimeModel {
 
     private int runningTime = 0;
-    private int countDownTime = 3;
+    private int countDownTime = 3;  // new countdown for 3 second delay
 
     @Override
     public void resetRuntime() {
@@ -16,7 +16,7 @@ public class DefaultTimeModel implements TimeModel {
     }
 
     @Override
-    public void restedCountdownTime() {countDownTime = 3; }
+    public void restedCountdownTime() {countDownTime = 3; } // countdown restarted
 
     @Override
     public void incRuntime() {
@@ -35,10 +35,9 @@ public class DefaultTimeModel implements TimeModel {
 
     @Override
     public void decCountdownTime() {
-        System.out.println(countDownTime);
         if (countDownTime > 0) {
             countDownTime = Math.max(countDownTime - SEC_PER_TICK, 0);
-        }
+        }   // decrease second left in delay
     }
 
     @Override

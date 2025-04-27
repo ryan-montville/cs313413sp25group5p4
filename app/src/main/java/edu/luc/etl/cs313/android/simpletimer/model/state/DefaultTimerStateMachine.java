@@ -64,7 +64,7 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
     @Override public void actionReset()      { timeModel.resetRuntime(); actionUpdateView(); }
     @Override public void actionAdd()        {
         timeModel.incRuntime();
-        if(timeModel.getRuntime() >= 99){
+        if(timeModel.getRuntime() >= 99){   // start timer when seconds hit 99
             actionBeep();
             toRunningState();
         }
@@ -74,7 +74,7 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
     @Override public void actionStop()       { clockModel.stop(); }
     @Override public void actionDec()        {
         timeModel.decRuntime();
-        if (timeModel.isTimeZero()) {
+        if (timeModel.isTimeZero()) {       // move to beeping when time runs out
             toBeepingState();
         }
         actionUpdateView();
@@ -105,7 +105,7 @@ public class DefaultTimerStateMachine implements TimerStateMachine {
     @Override
     public void actionDecThreeSecondCountdown() {
         timeModel.decCountdownTime();
-        if (timeModel.isCountdownZero()) {
+        if (timeModel.isCountdownZero()) {  // start running timer when delay is over
             actionBeep();
             toRunningState();
         }

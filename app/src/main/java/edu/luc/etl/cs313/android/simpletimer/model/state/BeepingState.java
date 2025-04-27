@@ -34,8 +34,8 @@ public class BeepingState implements TimerState {
     **/
     @Override
     public void onButtonClicked() {
-        /* if button is pressed whiel beeping 
-         * stop the alarm and go to stopped state
+        /* if button is pressed while beeping
+         * stop clock ticking and go to stopped state
         */
         sm.actionStop();
         sm.toStoppedState();
@@ -48,7 +48,6 @@ public class BeepingState implements TimerState {
     @Override
     public void onTick() {
         //keep beeping each tick and stay in the Beeping state
-        System.out.println("Beeping state onTick");
         sm.actionBeep();
         sm.toBeepingState();
     }
